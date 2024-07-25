@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-List</title>
+</head>
+<body>
+
+    <h1>TODo List</h1>
+    
+    <form action="/todo/create" method="post">
+        <input type="text" name="task" placeholder="enter your task"/>
+        <button type="submit" name="submit">submit</button>
+    </form>
+
+    <% data.forEach((list ,i) => {%>
+
+        <li><%= list.task %> <a href="/todo/edit/<%=list._id%>">edit</a>  <a href="/todo/delete/<%=list._id%>">remove</a></li>
+
+    <%})%>
+
+</body>
+</html>
